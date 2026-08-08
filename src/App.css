@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Custom scrollbar styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  width: 0;  /* Remove scrollbar space */
+  height: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(120deg, #2d006b 0%, #32004e 50%, #1a003c 100%);
+}
+@keyframes hero-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-hero-gradient {
+  background-size: 200% 200%;
+  animation: hero-gradient 10s ease-in-out infinite;
+}
+
+/* Glowing text for name */
+.hero-glow {
+  text-shadow: 0 0 16px #d946ef, 0 0 32px #6366f1, 0 0 48px #a21caf;
+}
+
+/* Profile image glowing ring */
+@keyframes profile-glow {
+  0%, 100% { box-shadow: 0 0 0 0 #a21caf55, 0 0 32px 8px #c026d3aa; }
+  50% { box-shadow: 0 0 24px 10px #a21caf88, 0 0 48px 16px #c026d3cc; }
+}
+.animate-profile-glow {
+  animation: profile-glow 2.5s ease-in-out infinite;
+}
+.shadow-hero-glow {
+  box-shadow: 0 0 40px 0 #a21caf33, 0 0 80px 10px #c026d366;
+}
+
+/* Shimmer effect for CTA */
+@keyframes shimmer {
+  0% { opacity: 0.7; background-position: -200px 0; }
+  100% { opacity: 1; background-position: 200px 0; }
+}
+.shimmer-btn::before {
+  content: '';
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #fff7, transparent);
+  opacity: 0.6;
+  filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+  animation: shimmer 2.5s infinite;
+}
+
+/* Ripple effect on CTA hover */
+.ripple-bg {
+  transition: opacity 0.3s;
+}
+
+/* Social icons animation */
+@keyframes social-bounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(12deg); }
+}
+.social-animate:hover {
+  animation: social-bounce 0.6s;
+  box-shadow: 0 0 16px 4px #a21caf55;
+}
+
+/* Typewriter effect for role */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.animate-typewriter {
+  display: inline-block;
+  animation: typewriter 2s steps(30, end) 0.3s 1 normal both;
+  border-right: 4px solid #d946ef;
+}
+
+/* Handwritten font for signature */
+.font-signature {
+  font-family: 'Pacifico', cursive;
+}
