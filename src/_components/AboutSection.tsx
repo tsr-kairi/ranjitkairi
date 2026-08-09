@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles } from 'lucide-react';
+import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles, Bot } from 'lucide-react';
 
 // Animation variants
 const container = {
@@ -72,7 +72,8 @@ const AboutSection = () => {
     { icon: Code2, name: 'React.js / Next.js' },
     { icon: Cpu, name: 'TypeScript / JavaScript' },
     { icon: LayoutDashboard, name: 'Tailwind / SCSS / Bootstrap' },
-    { icon: Sparkles, name: 'WordPress / Elementor' }
+    { icon: Sparkles, name: 'WordPress / Elementor' },
+    { icon: Bot, name: 'AI Tools (GPT-4, Copilot, Cursor)' }
   ];
 
   return (
@@ -138,7 +139,7 @@ const AboutSection = () => {
                 >
                   I'm a <span className="text-white font-semibold">Senior Frontend Developer</span> with 6+ years of experience 
                   building scalable, responsive, and high-performance web applications. I specialize in 
-                  React.js, Next.js, TypeScript, and WordPress development.
+                  React.js, Next.js, TypeScript, WordPress, and AI-assisted development.
                 </motion.p>
               </div>
               
@@ -158,8 +159,8 @@ const AboutSection = () => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   Currently working as Senior Frontend Developer at <span className="text-white font-medium">NexG</span> (Gurugram), I focus on 
-                  architecting scalable applications, building reusable component libraries, and delivering 
-                  pixel-perfect UIs with clean, maintainable code.
+                  architecting scalable applications, building reusable component libraries, and leveraging 
+                  AI tools like GitHub Copilot, GPT-4, and Cursor to ship faster with cleaner code.
                 </motion.p>
               </div>
             </div>

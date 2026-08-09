@@ -24,6 +24,7 @@ const experienceData = [
       'Integrated REST APIs and implemented authentication systems',
       'Developed HRMS, CRM, Payroll, and Billing software dashboards',
       'Improved application performance through code splitting & lazy loading',
+      'Leveraged AI tools (Copilot, GPT-4, Cursor) to accelerate development',
       'Built WordPress sites with Elementor for clients'
     ],
     skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'WordPress', 'REST APIs'],

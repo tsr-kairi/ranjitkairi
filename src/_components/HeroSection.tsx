@@ -24,7 +24,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
 
   const expertise = [
     { icon: Code, title: 'React & Next.js', description: 'Scalable frontend apps' },
-    { icon: Cpu, title: 'TypeScript', description: 'Type-safe development' },
+    { icon: Cpu, title: 'AI-Powered Dev', description: 'Copilot, GPT-4, Cursor' },
     { icon: Layout, title: 'UI Engineering', description: 'Pixel-perfect interfaces' },
     { icon: Users, title: 'WordPress', description: 'Elementor & custom themes' }
   ];
@@ -57,7 +57,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
               <br />
               <Typewriter
                 options={{
-                  strings: ['Full-Stack Developer', 'Senior Frontend Developer', 'React.js Expert', 'Next.js Developer', 'WordPress Developer'],
+                  strings: ['Senior Frontend Developer', 'React.js Expert', 'Next.js Developer', 'WordPress Developer', 'AI-Powered Developer'],
 
                   autoStart: true,
                   loop: true,
@@ -73,7 +73,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               I craft exceptional digital experiences using modern technologies.
               With 6+ years at NexG, I specialize in building scalable React & Next.js
-              applications, WordPress sites, and performance-optimized UIs.
+              applications, WordPress sites, and AI-assisted development workflows.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

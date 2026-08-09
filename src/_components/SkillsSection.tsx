@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Cpu, Palette, Sparkles, LayoutGrid, Users, Lightbulb, GitBranch, Smartphone, Server } from 'lucide-react';
+import { Code, Cpu, Palette, Sparkles, LayoutGrid, Users, Lightbulb, GitBranch, Smartphone, Server, Globe } from 'lucide-react';
 import SkillBar from './SkillBar';
 
-type SkillCategory = 'frontend' | 'backend' | 'ai' | 'tools';
+type SkillCategory = 'frontend' | 'backend' | 'cms' | 'ai' | 'tools';
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('frontend');
@@ -49,12 +49,22 @@ const SkillsSection = () => {
       { name: 'Supabase', level: 68, color: 'from-emerald-400 to-teal-500' },
       { name: 'REST API Integration', level: 90, color: 'from-indigo-400 to-purple-500' },
     ],
-    ai: [
+    cms: [
       { name: 'WordPress', level: 88, color: 'from-blue-500 to-blue-700' },
       { name: 'Elementor', level: 85, color: 'from-pink-400 to-rose-500' },
       { name: 'SCSS / CSS3', level: 90, color: 'from-pink-500 to-purple-500' },
       { name: 'Bootstrap', level: 85, color: 'from-purple-500 to-indigo-500' },
       { name: 'HTML5', level: 96, color: 'from-orange-400 to-red-500' },
+    ],
+    ai: [
+      { name: 'ChatGPT / GPT-4', level: 92, color: 'from-green-400 to-emerald-500' },
+      { name: 'Claude (Anthropic)', level: 88, color: 'from-orange-400 to-amber-500' },
+      { name: 'GitHub Copilot', level: 90, color: 'from-purple-400 to-violet-500' },
+      { name: 'Cursor AI', level: 88, color: 'from-blue-400 to-cyan-500' },
+      { name: 'Prompt Engineering', level: 85, color: 'from-pink-400 to-rose-500' },
+      { name: 'AI-Assisted Development', level: 90, color: 'from-indigo-400 to-purple-500' },
+      { name: 'v0 by Vercel', level: 82, color: 'from-gray-300 to-gray-500' },
+      { name: 'Lovable / Bolt.new', level: 80, color: 'from-yellow-400 to-orange-400' },
     ],
     tools: [
       { name: 'Git / GitHub', level: 90, color: 'from-orange-500 to-red-500' },
@@ -77,7 +87,8 @@ const SkillsSection = () => {
   const categories: { id: SkillCategory; icon: React.ElementType; label: string }[] = [
     { id: 'frontend', icon: Smartphone, label: 'Frontend' },
     { id: 'backend', icon: Server, label: 'Backend' },
-    { id: 'ai', icon: Cpu, label: 'CMS & Styling' },
+    { id: 'cms', icon: Globe, label: 'CMS & Styling' },
+    { id: 'ai', icon: Cpu, label: 'AI Tools' },
     { id: 'tools', icon: Code, label: 'Tools' },
   ];
 
