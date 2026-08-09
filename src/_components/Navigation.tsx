@@ -70,7 +70,7 @@ const Navigation = () => {
               </motion.div>
             ))}
             <motion.a
-              href="/resume.pdf"
+              href="../assets/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -132,7 +132,7 @@ const Navigation = () => {
                 </motion.div>
               ))}
               <motion.a
-                href="/resume.pdf"
+                href="../assets/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ x: -20, opacity: 0 }}

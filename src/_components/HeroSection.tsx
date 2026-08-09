@@ -72,7 +72,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
 
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               I craft exceptional digital experiences using modern technologies.
-              With 4+ years at NexG, I specialize in building scalable React & Next.js
+              With 6+ years at NexG, I specialize in building scalable React & Next.js
               applications, WordPress sites, and performance-optimized UIs.
             </p>
 
@@ -89,7 +89,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="../assets/resume.pdf"
                 download
                 className="px-8 py-4 border-2 border-purple-500/30 rounded-lg font-semibold text-lg hover:bg-purple-500/10 transition-colors duration-300 flex items-center justify-center gap-2 group"
               >

@@ -62,7 +62,7 @@ const cardHover = {
 
 const AboutSection = () => {
   const stats = [
-    { icon: Code, value: '50K+', label: 'Lines of Code Written' },
+    { icon: Code, value: '4.8B+', label: 'Lines of Code Written' },
     { icon: Trophy, value: '30+', label: 'Projects Completed' },
     { icon: Zap, value: '6+', label: 'Years Experience' },
     { icon: Briefcase, value: '20+', label: 'Technologies Used' }
@@ -136,7 +136,7 @@ const AboutSection = () => {
                   }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  I'm a <span className="text-white font-semibold">Senior Frontend Developer</span> with 4+ years of experience 
+                  I'm a <span className="text-white font-semibold">Senior Frontend Developer</span> with 6+ years of experience 
                   building scalable, responsive, and high-performance web applications. I specialize in 
                   React.js, Next.js, TypeScript, and WordPress development.
                 </motion.p>

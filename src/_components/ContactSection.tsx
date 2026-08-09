@@ -418,7 +418,7 @@ const ContactSection = () => {
           <h3 className="text-2xl font-bold text-white mb-6">Ready to start a project?</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/resume.pdf"
+              href="../assets/resume.pdf"
               download
               className="group relative px-8 py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all duration-300 border border-gray-700 hover:border-purple-500/50 flex items-center"
             >
