@@ -345,7 +345,8 @@ const ModernExperienceSection = () => {
           transition={{ delay: 0.4 }}
           className="text-center mt-20"
         >
-          <motion.button
+          <motion.a
+            href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
@@ -357,7 +358,7 @@ const ModernExperienceSection = () => {
             >
               →
             </motion.div>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
