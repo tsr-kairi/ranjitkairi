@@ -27,16 +27,17 @@ export default function FloatingIcons() {
     });
   };
 
-  const openWhatsApp = () => {
+  const openWhatsApp = async () => {
     const phoneNumber = '9127301592';
-    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+    const url = `https://wa.me/${phoneNumber}`;
+    window.open(url, '_blank');
 
-    // Add WhatsApp link to clipboard
-    navigator.clipboard.writeText(`https://wa.me/${phoneNumber}`);
-    
-    // Show toast notification
-    toast.success(`WhatsApp link copied to clipboard: https://wa.me/${phoneNumber}`);
-    
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success(`WhatsApp link copied to clipboard: ${url}`);
+    } catch {
+      toast.success(`Opening WhatsApp...`);
+    }
   };
 
 

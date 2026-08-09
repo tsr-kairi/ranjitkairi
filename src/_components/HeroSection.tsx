@@ -16,7 +16,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   ];
 
   const stats = [
-    { value: '4+', label: 'Years Experience' },
+    { value: '6+', label: 'Years Experience' },
     { value: '30+', label: 'Projects Completed' },
     { value: '20+', label: 'Technologies' },
     { value: '10+', label: 'Happy Clients' }
@@ -57,7 +57,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
               <br />
               <Typewriter
                 options={{
-                  strings: ['Senior Frontend Developer', 'React.js Expert', 'Next.js Developer', 'WordPress Developer'],
+                  strings: ['Full-Stack Developer', 'Senior Frontend Developer', 'React.js Expert', 'Next.js Developer', 'WordPress Developer'],
 
                   autoStart: true,
                   loop: true,

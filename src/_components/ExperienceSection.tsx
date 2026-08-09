@@ -34,10 +34,30 @@ const experienceData = [
     bgColor: 'from-blue-500/10 to-cyan-400/10',
     borderColor: 'border-blue-500/30',
   },
+  {
+    id: 2,
+    role: 'Frontend Developer',
+    company: 'synergytechs.net',
+    duration: 'May 2020 - Jun 2021 · 1 yr 2 mos',
+    location: 'Gurugram, Haryana, India · Remote',
+    type: 'Part-time',
+    achievements: [
+      'Developed dynamic, responsive, and user-friendly interfaces using React.js, Next.js, and TypeScript',
+      'Designed and implemented scalable frontend architectures following best practices',
+      'Ensured seamless cross-browser and cross-device performance through thorough debugging and optimization',
+      'Collaborated with product, design, and backend teams to consistently meet deadlines',
+      'Improved project delivery by following Agile methodologies and maintaining clean, modular code'
+    ],
+    skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'CSS', 'Agile'],
+    icon: <Code className="w-5 h-5" />,
+    color: 'from-emerald-500 to-teal-400',
+    bgColor: 'from-emerald-500/10 to-teal-400/10',
+    borderColor: 'border-emerald-500/30',
+  },
 ];
 
 const stats = [
-  { value: '4+', label: 'Years Experience', icon: Calendar, color: 'text-blue-400' },
+  { value: '6+', label: 'Years Experience', icon: Calendar, color: 'text-blue-400' },
   { value: '30+', label: 'Projects Delivered', icon: Trophy, color: 'text-purple-400' },
   { value: '20+', label: 'Technologies', icon: Users, color: 'text-pink-400' },
   { value: '10+', label: 'Happy Clients', icon: Star, color: 'text-yellow-400' },

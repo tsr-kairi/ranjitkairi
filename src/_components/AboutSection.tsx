@@ -64,7 +64,7 @@ const AboutSection = () => {
   const stats = [
     { icon: Code, value: '50K+', label: 'Lines of Code Written' },
     { icon: Trophy, value: '30+', label: 'Projects Completed' },
-    { icon: Zap, value: '4+', label: 'Years Experience' },
+    { icon: Zap, value: '6+', label: 'Years Experience' },
     { icon: Briefcase, value: '20+', label: 'Technologies Used' }
   ];
 
