@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowUp, MessageSquare, Bot } from 'lucide-react';
+import { ArrowUp, MessageSquare } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function FloatingIcons() {

@@ -6,8 +6,6 @@ import {
   Code, 
   Calendar,
   Building,
-  Zap,
-  Target,
   Star,
   TrendingUp
 } from 'lucide-react';
