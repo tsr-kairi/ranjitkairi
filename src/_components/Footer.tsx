@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex justify-center items-center space-x-4 mt-4">
           <span className="text-gray-500 text-sm">Connect with me:</span>
           <a href="https://linkedin.com/in/ranjitkairi/" className="text-gray-400 hover:text-purple-400 transition-colors">LinkedIn</a>
-          <a href="https://github.com/ranjitkairi" className="text-gray-400 hover:text-purple-400 transition-colors">GitHub</a>
+          <a href="https://github.com/tsr-kairi" className="text-gray-400 hover:text-purple-400 transition-colors">GitHub</a>
           <a href="mailto:ranjitkairi.dev@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">Email</a>
         </div>
       </div>

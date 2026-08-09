@@ -237,7 +237,7 @@ const ContactSection = () => {
       icon: Github,
       title: 'GitHub',
       value: 'github.com/ranjitkairi',
-      link: 'https://github.com/ranjitkairi',
+      link: 'https://github.com/tsr-kairi',
       color: 'from-gray-500 to-gray-400',
       bgColor: 'bg-gradient-to-br from-gray-500/10 to-gray-400/10',
     },
@@ -418,7 +418,7 @@ const ContactSection = () => {
           <h3 className="text-2xl font-bold text-white mb-6">Ready to start a project?</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="../assets/resume.pdf"
+              href="resume.pdf"
               download
               className="group relative px-8 py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all duration-300 border border-gray-700 hover:border-purple-500/50 flex items-center"
             >

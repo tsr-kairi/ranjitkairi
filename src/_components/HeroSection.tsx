@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/ranjitkairi', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/tsr-kairi', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/ranjitkairi/', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:ranjitkairi.dev@gmail.com', label: 'Email' }
   ];
@@ -89,7 +89,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
               </a>
 
               <a
-                href="../assets/resume.pdf"
+                href="resume.pdf"
                 download
                 className="px-8 py-4 border-2 border-purple-500/30 rounded-lg font-semibold text-lg hover:bg-purple-500/10 transition-colors duration-300 flex items-center justify-center gap-2 group"
               >

@@ -115,8 +115,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Email: ranjitkairi@gmail.com
 - LinkedIn: [Ranjit Kairi](https://linkedin.com/in/ranjit-kairi)
-- GitHub: [@ranjitkairi](https://github.com/ranjitkairi)
+- GitHub: [@ranjitkairi](https://github.com/tsr-kairi)
 
 ---
 
-Made with ❤️ by [Ranjit Kairi](https://github.com/ranjitkairi) (Self) - Feel free to use this template!
+Made with ❤️ by [Ranjit Kairi](https://github.com/tsr-kairi) (Self) - Feel free to use this template!
