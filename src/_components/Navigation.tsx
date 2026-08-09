@@ -116,20 +116,16 @@ const Navigation = () => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
-                <motion.div
+                <motion.button
                   key={item}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="px-3 py-2 rounded-md"
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="block w-full text-left text-gray-200 hover:bg-gray-800 px-6 py-4 text-lg font-medium border-b border-gray-800/50"
                 >
-                  <button
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block w-full text-left text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium"
-                  >
-                    {item}
-                  </button>
-                </motion.div>
+                  {item}
+                </motion.button>
               ))}
               <motion.a
                 href="resume.pdf"
