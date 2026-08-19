@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles, Bot } from 'lucide-react';
+import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles, Bot, Quote } from 'lucide-react';
+import AnimatedText from './AnimatedText';
+import SectionHeading from './SectionHeading';
+import SectionAmbience from './SectionAmbience';
+import CountUp from './CountUp';
 
 // Animation variants
 const container = {
@@ -15,27 +19,17 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 40, rotateX: 15, transformPerspective: 1200 },
   show: { 
     opacity: 1, 
     y: 0, 
+    rotateX: 0,
+    transformPerspective: 1200,
     transition: { 
       duration: 0.5,
       ease: "easeOut"
     } 
   },
-};
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: 0.6, 
-      ease: 'easeOut' 
-    }
-  }
 };
 
 // Animation container for staggered children (unused but kept for reference)
@@ -62,10 +56,10 @@ const cardHover = {
 
 const AboutSection = () => {
   const stats = [
-    { icon: Code, value: '4.8B+', label: 'Lines of Code Written' },
-    { icon: Trophy, value: '30+', label: 'Projects Completed' },
-    { icon: Zap, value: '6+', label: 'Years Experience' },
-    { icon: Briefcase, value: '20+', label: 'Technologies Used' }
+    { icon: Code, value: 4.8, suffix: 'B+', decimals: 1, label: 'Lines of Code Written' },
+    { icon: Trophy, value: 30, suffix: '+', decimals: 0, label: 'Projects Completed' },
+    { icon: Zap, value: 6, suffix: '+', decimals: 0, label: 'Years Experience' },
+    { icon: Briefcase, value: 20, suffix: '+', decimals: 0, label: 'Technologies Used' }
   ];
 
   const techStack = [
@@ -78,41 +72,12 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="relative z-10 py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeInUp}
-        >
-          <motion.span 
-            className="inline-block px-4 py-1 text-sm font-medium text-purple-400 bg-purple-900/30 rounded-full mb-4"
-            variants={fadeInUp}
-          >
-            PROFESSIONAL OVERVIEW
-          </motion.span>
-          <motion.h2 
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
-            variants={fadeInUp}
-          >
-            Crafting Digital <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Experiences</span>
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"
-            variants={{
-              hidden: { scaleX: 0 },
-              visible: { 
-                scaleX: 1,
-                transition: { 
-                  delay: 0.3, 
-                  duration: 0.8, 
-                  type: 'spring' 
-                } 
-              }
-            }}
-          />
-        </motion.div>
+      <SectionAmbience variant="purple" />
+      <div className="relative max-w-7xl mx-auto">
+        <SectionHeading
+          badge="PROFESSIONAL OVERVIEW"
+          title={<>Crafting Digital <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Experiences</span></>}
+        />
         
         <motion.div 
           className="grid lg:grid-cols-3 gap-12 items-start"
@@ -122,46 +87,24 @@ const AboutSection = () => {
           variants={container}
         >
           <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-6">
-              <div className="relative">
-                <motion.p 
+            <div className="relative p-6 md:p-8 rounded-2xl bg-gray-800/40 backdrop-blur-sm border border-white/5 overflow-hidden group/statement">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-pink-500" />
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-purple-500/10 blur-3xl opacity-0 group-hover/statement:opacity-100 transition-opacity duration-500" />
+              <Quote className="w-9 h-9 text-purple-400/50 mb-5" />
+              <div className="space-y-6">
+                <AnimatedText
+                  text="I'm a Senior Frontend Developer with 6+ years of experience building scalable, responsive, and high-performance web applications. I specialize in React.js, Next.js, TypeScript, WordPress, and AI-assisted development."
                   className="text-xl text-gray-300 leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { 
-                      duration: 0.6,
-                      ease: 'easeOut'
-                    }
-                  }}
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  I'm a <span className="text-white font-semibold">Senior Frontend Developer</span> with 6+ years of experience 
-                  building scalable, responsive, and high-performance web applications. I specialize in 
-                  React.js, Next.js, TypeScript, WordPress, and AI-assisted development.
-                </motion.p>
-              </div>
-              
-              <div className="relative mt-6">
-                <motion.p 
+                  highlightWords={['Senior', 'Frontend', 'Developer']}
+                  highlightClassName="text-white font-semibold"
+                />
+                
+                <AnimatedText
+                  text="Currently working as Senior Frontend Developer at NexG (Gurugram), I focus on architecting scalable applications, building reusable component libraries, and leveraging AI tools like GitHub Copilot, GPT-4, and Cursor to ship faster with cleaner code."
                   className="text-xl text-gray-300 leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { 
-                      duration: 0.6,
-                      ease: 'easeOut',
-                      delay: 0.2
-                    }
-                  }}
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  Currently working as Senior Frontend Developer at <span className="text-white font-medium">NexG</span> (Gurugram), I focus on 
-                  architecting scalable applications, building reusable component libraries, and leveraging 
-                  AI tools like GitHub Copilot, GPT-4, and Cursor to ship faster with cleaner code.
-                </motion.p>
+                  highlightWords={['NexG']}
+                  highlightClassName="text-white font-medium"
+                />
               </div>
             </div>
             
@@ -169,12 +112,20 @@ const AboutSection = () => {
               {stats.map((stat, index) => (
                 <motion.div 
                   key={index} 
-                  className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-purple-500/30"
+                  className="group/stat relative overflow-hidden bg-gray-800/40 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-purple-500/40"
                   variants={item}
                   whileHover={cardHover}
                 >
-                  <stat.icon className="w-8 h-8 text-purple-400 mb-3" />
-                  <p className="text-3xl font-bold text-white">{stat.value}</p>
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/70 to-transparent" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-2.5 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/20 group-hover/stat:scale-110 transition-transform duration-300">
+                      <stat.icon className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <span className="text-xs font-mono text-gray-500">{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                    <CountUp end={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+                  </p>
                   <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
                 </motion.div>
               ))}
@@ -195,10 +146,11 @@ const AboutSection = () => {
               <div className="bg-gray-900 p-8 rounded-xl h-full">
                 <motion.h3 
                   className="text-2xl font-bold text-white mb-6 flex items-center"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40, rotateX: 12, transformPerspective: 1200 }}
                   whileInView={{ 
                     opacity: 1, 
                     y: 0,
+                    rotateX: 0,
                     transition: { 
                       duration: 0.6,
                       ease: 'easeOut',
@@ -237,10 +189,11 @@ const AboutSection = () => {
                 
                 <motion.div 
                   className="mt-8 pt-6 border-t border-gray-800"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40, rotateX: 12, transformPerspective: 1200 }}
                   whileInView={{ 
                     opacity: 1, 
                     y: 0,
+                    rotateX: 0,
                     transition: { 
                       duration: 0.6,
                       ease: 'easeOut',

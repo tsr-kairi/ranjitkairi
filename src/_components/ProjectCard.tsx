@@ -44,10 +44,12 @@ const ProjectCard = ({ project, index, isLoaded }: ProjectCardProps) => {
   const gradient = `bg-gradient-to-br ${primary} ${secondary}`;
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40, rotateX: 12, transformPerspective: 1200 },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
+      transformPerspective: 1200,
       transition: {
         duration: 0.6,
         ease: [0.16, 1, 0.3, 1],
@@ -73,13 +75,24 @@ const ProjectCard = ({ project, index, isLoaded }: ProjectCardProps) => {
       whileHover="hover"
       whileTap="tap"
       variants={cardVariants}
-      className={`group relative h-full overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 transition-all duration-500 ${
-        isHovered ? 'shadow-2xl shadow-purple-500/10' : 'shadow-lg'
+      className={`group relative h-full overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border transition-all duration-500 ${
+        isHovered
+          ? 'border-purple-500/40 shadow-2xl shadow-purple-500/15 -translate-y-1'
+          : 'border-gray-700/50 shadow-lg'
       } ${project.featured ? 'ring-1 ring-purple-500/50' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsExpanded(!isExpanded)}
     >
+      {/* Shine sweep on hover */}
+      <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden rounded-2xl">
+        <div
+          className={`absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent ${
+            isHovered ? 'animate-shine' : 'opacity-0'
+          }`}
+        />
+      </div>
+
       {/* Featured Badge */}
       {project.featured && (
         <div className="absolute top-4 right-4 z-10">
@@ -229,9 +242,9 @@ const ProjectCard = ({ project, index, isLoaded }: ProjectCardProps) => {
           </motion.span>
         </motion.button>
 
-        {/* Impact Section (Collapsible) */}
+        {/* Impact Section (Collapsible) — expands only on 'Read more' click, not on hover */}
         <AnimatePresence>
-          {(isHovered || isExpanded) && project.impact && project.impact.length > 0 && (
+          {isExpanded && project.impact && project.impact.length > 0 && (
             <motion.div 
               className="mb-5 overflow-hidden"
               initial={{ height: 0, opacity: 0 }}

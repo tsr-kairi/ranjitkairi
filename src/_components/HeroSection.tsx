@@ -1,8 +1,13 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight, Code, Cpu, Layout, Users, Code2, Sparkles } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 
 import myImg from '../assets/profile.png';
+import Scroll3DReveal from './Scroll3DReveal';
+import AnimatedHeroBackground from './AnimatedHeroBackground';
+import Magnet from './Magnet';
+import CountUp from './CountUp';
 
 interface HeroSectionProps {
     isLoaded: boolean;
@@ -16,10 +21,10 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   ];
 
   const stats = [
-    { value: '6+', label: 'Years Experience' },
-    { value: '30+', label: 'Projects Completed' },
-    { value: '20+', label: 'Technologies' },
-    { value: '10+', label: 'Happy Clients' }
+    { value: 6, suffix: '+', label: 'Years Experience' },
+    { value: 30, suffix: '+', label: 'Projects Completed' },
+    { value: 20, suffix: '+', label: 'Technologies' },
+    { value: 10, suffix: '+', label: 'Happy Clients' }
   ];
 
   const expertise = [
@@ -32,12 +37,14 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 md:pb-0 pb-24">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-1/4 -right-1/4 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      </div>
+      <AnimatedHeroBackground />
 
-      <div className={`relative z-10 container mx-auto px-6 py-16 md:py-24 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+      <motion.div
+        className="relative z-10 container mx-auto px-6 py-16 md:py-24"
+        initial={{ opacity: 0, y: 60, rotateX: 15, transformPerspective: 1200 }}
+        animate={isLoaded ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      >
       <div className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-16 md:mt-0">
@@ -77,36 +84,42 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a
-                href="mailto:ranjitkairi.dev@gmail.com"
-                className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold text-lg overflow-hidden hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center"
-              >
-                <span className="relative z-10 flex items-center">
-                  Hire Me
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </a>
+              <Magnet strength={4}>
+                <a
+                  href="mailto:ranjitkairi.dev@gmail.com"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold text-lg overflow-hidden hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Hire Me
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              </Magnet>
 
-              <a
-                href="resume.pdf"
-                download
-                className="px-8 py-4 border-2 border-purple-500/30 rounded-lg font-semibold text-lg hover:bg-purple-500/10 transition-colors duration-300 flex items-center justify-center gap-2 group"
-              >
-                <Code2 className="w-5 h-5 group-hover:animate-pulse" />
-                Download Resume
-              </a>
+              <Magnet strength={4}>
+                <a
+                  href="resume.pdf"
+                  download
+                  className="px-8 py-4 border-2 border-purple-500/30 rounded-lg font-semibold text-lg hover:bg-purple-500/10 transition-colors duration-300 flex items-center justify-center gap-2 group"
+                >
+                  <Code2 className="w-5 h-5 group-hover:animate-pulse" />
+                  Download Resume
+                </a>
+              </Magnet>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50 hover:border-purple-500/30 transition-colors">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    {stat.value}
+                <Scroll3DReveal key={index} delay={0.5 + index * 0.1} rotate={20} distance={50}>
+                  <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50 hover:border-purple-500/30 transition-colors">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      <CountUp end={stat.value} suffix={stat.suffix} />
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </div>
+                </Scroll3DReveal>
               ))}
             </div>
           </div>
@@ -114,6 +127,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
           {/* Right Column - Profile & Skills */}
           <div className="relative">
             {/* Profile Image */}
+            <Scroll3DReveal direction="right" rotate={20} distance={80} delay={0.2}>
             <div className="relative mx-auto lg:mx-0 w-72 h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl transform rotate-6 scale-95 opacity-20"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-2xl transform -rotate-6 scale-95 opacity-20"></div>
@@ -133,18 +147,20 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
                 </div>
               </div>
             </div>
+            </Scroll3DReveal>
 
             {/* Expertise Cards */}
             <div className="grid grid-cols-2 gap-4 mt-8">
               {expertise.map((item, index) => (
-                <div 
-                  key={index}
-                  className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50 hover:border-purple-500/30 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
-                >
-                  <item.icon className="w-6 h-6 text-purple-400 mb-2" />
-                  <h4 className="font-semibold text-white">{item.title}</h4>
-                  <p className="text-sm text-gray-400">{item.description}</p>
-                </div>
+                <Scroll3DReveal key={index} delay={0.4 + index * 0.12} rotate={18} distance={50}>
+                  <div 
+                    className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50 hover:border-purple-500/30 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10"
+                  >
+                    <item.icon className="w-6 h-6 text-purple-400 mb-2" />
+                    <h4 className="font-semibold text-white">{item.title}</h4>
+                    <p className="text-sm text-gray-400">{item.description}</p>
+                  </div>
+                </Scroll3DReveal>
               ))}
             </div>
           </div>
@@ -168,7 +184,7 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
         </div>
       </div>
 
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Cpu, Palette, Sparkles, LayoutGrid, Users, Lightbulb, GitBranch, Smartphone, Server, Globe } from 'lucide-react';
 import SkillBar from './SkillBar';
+import SectionHeading from './SectionHeading';
+import SectionAmbience from './SectionAmbience';
 
 type SkillCategory = 'frontend' | 'backend' | 'cms' | 'ai' | 'tools';
 
@@ -104,27 +106,17 @@ const SkillsSection = () => {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 40, opacity: 0, rotateX: 12, transformPerspective: 1200 },
     visible: {
       y: 0,
       opacity: 1,
+      rotateX: 0,
+      transformPerspective: 1200,
       transition: {
         duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
       },
     },
-  };
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.6, 
-        ease: 'easeOut' 
-      }
-    }
   };
 
   return (
@@ -136,47 +128,21 @@ const SkillsSection = () => {
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          variants={itemVariants}
-        >
-          <motion.span className="inline-block px-4 py-1 text-sm font-medium text-purple-400 bg-purple-900/30 rounded-full mb-4"
-            variants={fadeInUp}
-          >
-            TECHNICAL MASTERY
-          </motion.span>
-          <motion.h2 className="text-5xl md:text-6xl font-bold text-white mb-6"
-            variants={fadeInUp}
-          >
-            My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Expertise</span>
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"
-            variants={{
-              hidden: { scaleX: 0 },
-              visible: { 
-                scaleX: 1,
-                transition: { 
-                  delay: 0.3, 
-                  duration: 0.8, 
-                  type: 'spring' 
-                } 
-              }
-            }}
-          />
-          <motion.p className="text-xl text-gray-400 max-w-3xl mx-auto mt-6"
-            variants={fadeInUp}
-          >
-            A blend of technical prowess and creative problem-solving to deliver exceptional digital experiences
-          </motion.p>
-        </motion.div>
+      <SectionAmbience variant="cyan" />
+      <div className="relative max-w-7xl mx-auto">
+        <SectionHeading
+          badge="TECHNICAL MASTERY"
+          title={<>My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Expertise</span></>}
+          subtitle="A blend of technical prowess and creative problem-solving to deliver exceptional digital experiences"
+        />
         
         <motion.div 
           className="grid lg:grid-cols-3 gap-12 items-start"
           variants={itemVariants}
         >
-          <div className="lg:col-span-2 bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+          <div className="lg:col-span-2 group relative overflow-hidden bg-gray-800/40 backdrop-blur-xl rounded-2xl p-8 border border-white/5 hover:border-purple-500/30 transition-colors duration-300">
+            <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-500/25 via-transparent to-pink-500/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
             <div className="flex flex-wrap gap-2 mb-8">
               {categories.map(({ id, icon: Icon, label }, index) => (
                 <motion.div
@@ -215,7 +181,9 @@ const SkillsSection = () => {
             </AnimatePresence>
           </div>
           
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 h-full">
+          <div className="group relative overflow-hidden bg-gray-800/40 backdrop-blur-xl rounded-2xl p-8 border border-white/5 hover:border-purple-500/30 transition-colors duration-300 h-full">
+            <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-cyan-500/20 via-transparent to-purple-500/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
             <div className="flex items-center space-x-3 mb-8">
               <Users className="w-6 h-6 text-purple-400" />
               <h3 className="text-2xl font-bold text-white">Soft Skills</h3>

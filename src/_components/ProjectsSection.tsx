@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Filter } from 'lucide-react';
 import ProjectCard from './ProjectCard';
+import SectionHeading from './SectionHeading';
+import SectionAmbience from './SectionAmbience';
 import { projectsData } from '../data/projectsData';
 
 type ProjectCategory = 'all' | 'featured' | 'web' | 'mobile' | 'ai' | 'enterprise';
@@ -74,39 +76,16 @@ const ProjectsSection = ({ isLoaded }: { isLoaded: boolean }) => {
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40, rotateX: 12, transformPerspective: 1200 },
     show: { 
       opacity: 1, 
       y: 0,
+      rotateX: 0,
+      transformPerspective: 1200,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 15
-      }
-    }
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.6, 
-        ease: [0.16, 1, 0.3, 1]
       }
     }
   };
@@ -121,52 +100,13 @@ const ProjectsSection = ({ isLoaded }: { isLoaded: boolean }) => {
 
   return (
     <section id="projects" className="relative z-10 py-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          animate={isLoaded ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.span 
-            className="inline-block px-4 py-1 text-sm font-medium text-purple-400 bg-purple-900/30 rounded-full mb-4"
-            variants={fadeInUp}
-          >
-            PORTFOLIO SHOWCASE
-          </motion.span>
-          <motion.h2 
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
-            variants={fadeInUp}
-          >
-            My{' '}
-            <motion.span 
-              className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-              variants={fadeInUp}
-            >
-              Projects
-            </motion.span>
-          </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"
-            variants={{
-              hidden: { scaleX: 0 },
-              visible: { 
-                scaleX: 1,
-                transition: { 
-                  delay: 0.3, 
-                  duration: 0.8, 
-                  type: 'spring' 
-                } 
-              }
-            }}
-          />
-          <motion.p 
-            className="text-xl text-gray-400 max-w-3xl mx-auto mt-8"
-            variants={fadeInUp}
-          >
-            A curated collection of my professional work, showcasing innovative solutions and technical expertise
-          </motion.p>
-        </motion.div>
+      <SectionAmbience variant="pink" />
+      <div className="relative max-w-7xl mx-auto">
+        <SectionHeading
+          badge="PORTFOLIO SHOWCASE"
+          title={<>My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span></>}
+          subtitle="A curated collection of my professional work, showcasing innovative solutions and technical expertise"
+        />
 
         {/* Search and Filter Bar */}
         <motion.div 
@@ -175,9 +115,10 @@ const ProjectsSection = ({ isLoaded }: { isLoaded: boolean }) => {
           transition={{ delay: 0.2 }}
           className="mb-12"
         >
-          <div className="relative max-w-2xl mx-auto">
+          <div className="relative max-w-2xl mx-auto group">
+            <div className="absolute -inset-[3px] rounded-xl bg-gradient-to-r from-purple-500/50 via-pink-500/40 to-purple-500/50 opacity-0 group-focus-within:opacity-100 blur-[6px] transition-opacity duration-300" />
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-500" />
+              <Search className="h-5 w-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
             </div>
             <input
               type="text"
@@ -299,6 +240,27 @@ const ProjectsSection = ({ isLoaded }: { isLoaded: boolean }) => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Results count */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+          <p className="text-sm text-gray-400">
+            Showing{' '}
+            <span className="text-white font-semibold">{filteredProjects.length}</span>
+            {' '}of {projectsData.length} projects
+          </p>
+          <div className="flex items-center gap-2 text-xs text-gray-500">
+            {activeCategory !== 'all' && (
+              <span className="px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                {categories.find(c => c.id === activeCategory)?.label}
+              </span>
+            )}
+            {selectedTech.length > 0 && (
+              <span className="px-2.5 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300">
+                {selectedTech.length} tech filter{selectedTech.length > 1 ? 's' : ''}
+              </span>
+            )}
+          </div>
+        </div>
 
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
