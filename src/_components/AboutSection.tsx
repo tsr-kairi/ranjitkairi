@@ -56,18 +56,18 @@ const cardHover = {
 
 const AboutSection = () => {
   const stats = [
-    { icon: Code, value: 4.8, suffix: 'B+', decimals: 1, label: 'Lines of Code Written' },
+    { icon: Code, value: 15, suffix: '+', decimals: 0, label: 'Production Apps Built' },
     { icon: Trophy, value: 30, suffix: '+', decimals: 0, label: 'Projects Completed' },
-    { icon: Zap, value: 6, suffix: '+', decimals: 0, label: 'Years Experience' },
-    { icon: Briefcase, value: 20, suffix: '+', decimals: 0, label: 'Technologies Used' }
+    { icon: Zap, value: 5, suffix: '+', decimals: 0, label: 'Years Experience' },
+    { icon: Briefcase, value: 35, suffix: '%', decimals: 0, label: 'Bundle Load Reduction' }
   ];
 
   const techStack = [
     { icon: Code2, name: 'React.js / Next.js' },
-    { icon: Cpu, name: 'TypeScript / JavaScript' },
-    { icon: LayoutDashboard, name: 'Tailwind / SCSS / Bootstrap' },
-    { icon: Sparkles, name: 'WordPress / Elementor' },
-    { icon: Bot, name: 'AI Tools (GPT-4, Copilot, Cursor)' }
+    { icon: Cpu, name: 'TypeScript / Node.js' },
+    { icon: LayoutDashboard, name: 'Tailwind / Mantine / Material UI' },
+    { icon: Sparkles, name: 'AI Automation / WhatsApp API' },
+    { icon: Bot, name: 'Docker / AWS / Prisma ORM' }
   ];
 
   return (
@@ -93,16 +93,16 @@ const AboutSection = () => {
               <Quote className="w-9 h-9 text-purple-400/50 mb-5" />
               <div className="space-y-6">
                 <AnimatedText
-                  text="I'm a Senior Frontend Developer with 6+ years of experience building scalable, responsive, and high-performance web applications. I specialize in React.js, Next.js, TypeScript, WordPress, and AI-assisted development."
+                  text="I'm a Senior Software Engineer with 5+ years of hands-on experience architecting high-performance, scalable web applications and AI automation systems. Proficient in React.js, Next.js, TypeScript, Node.js, and modern cloud architectures."
                   className="text-xl text-gray-300 leading-relaxed"
-                  highlightWords={['Senior', 'Frontend', 'Developer']}
+                  highlightWords={['Senior', 'Software', 'Engineer', 'Full', 'Stack']}
                   highlightClassName="text-white font-semibold"
                 />
                 
                 <AnimatedText
-                  text="Currently working as Senior Frontend Developer at NexG (Gurugram), I focus on architecting scalable applications, building reusable component libraries, and leveraging AI tools like GitHub Copilot, GPT-4, and Cursor to ship faster with cleaner code."
+                  text="Having delivered production solutions across Standard Digitals, NexG Tech, and Synergy Techs, I focus on building modular component systems, integrating AI-driven workflows, and optimizing Core Web Vitals to deliver lightning-fast user experiences."
                   className="text-xl text-gray-300 leading-relaxed"
-                  highlightWords={['NexG']}
+                  highlightWords={['Standard', 'Digitals,', 'NexG', 'Tech,']}
                   highlightClassName="text-white font-medium"
                 />
               </div>

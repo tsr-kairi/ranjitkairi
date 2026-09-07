@@ -21,17 +21,17 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   ];
 
   const stats = [
-    { value: 6, suffix: '+', label: 'Years Experience' },
-    { value: 30, suffix: '+', label: 'Projects Completed' },
+    { value: 5, suffix: '+', label: 'Years Experience' },
+    { value: 15, suffix: '+', label: 'Production Apps' },
     { value: 20, suffix: '+', label: 'Technologies' },
-    { value: 10, suffix: '+', label: 'Happy Clients' }
+    { value: 35, suffix: '%', label: 'Faster Load Times' }
   ];
 
   const expertise = [
-    { icon: Code, title: 'React & Next.js', description: 'Scalable frontend apps' },
-    { icon: Cpu, title: 'AI-Powered Dev', description: 'Copilot, GPT-4, Cursor' },
-    { icon: Layout, title: 'UI Engineering', description: 'Pixel-perfect interfaces' },
-    { icon: Users, title: 'WordPress', description: 'Elementor & custom themes' }
+    { icon: Code, title: 'Full Stack & Frontend', description: 'React, Next.js & Node.js' },
+    { icon: Cpu, title: 'AI & Automation', description: 'Workflows & WhatsApp API' },
+    { icon: Layout, title: 'UI & Core Web Vitals', description: '35% faster loads & RSC' },
+    { icon: Users, title: 'Component Design Systems', description: 'Modular, scalable UI kits' }
   ];
 
   return (
@@ -64,7 +64,13 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
               <br />
               <Typewriter
                 options={{
-                  strings: ['Senior Frontend Developer', 'React.js Expert', 'Next.js Developer', 'WordPress Developer', 'AI-Powered Developer'],
+                  strings: [
+                    'Senior Software Engineer',
+                    'Full Stack & Frontend Developer',
+                    'React & Next.js Architect',
+                    'AI Automation Specialist',
+                    'TypeScript & Node.js Engineer'
+                  ],
 
                   autoStart: true,
                   loop: true,
@@ -78,9 +84,10 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-              I craft exceptional digital experiences using modern technologies.
-              With 6+ years at NexG, I specialize in building scalable React & Next.js
-              applications, WordPress sites, and AI-assisted development workflows.
+              Software Engineer with 5+ years of hands-on experience architecting high-performance,
+              scalable web applications and AI automation systems. Proficient in React.js, Next.js,
+              TypeScript, Node.js, and modern cloud architectures. Passionate about engineering pixel-perfect
+              UIs, boosting Core Web Vitals, and driving business growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

@@ -36,7 +36,7 @@ const Footer = () => {
               </span>
             </button>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Senior Frontend Developer crafting scalable React & Next.js experiences — powered by AI-assisted workflows.
+              Senior Software Engineer crafting high-performance full-stack web applications and AI automation systems.
             </p>
           </div>
 

@@ -223,8 +223,8 @@ const ContactSection = () => {
       id: 'location',
       icon: MapPin,
       title: 'Location',
-      value: 'Gurugram, Haryana, India',
-      link: 'https://maps.google.com/maps?q=Gurugram',
+      value: 'Gurgaon / Delhi NCR, India (Open to Remote)',
+      link: 'https://maps.google.com/maps?q=Gurgaon',
       color: 'from-rose-500 to-pink-500',
       bgColor: 'bg-gradient-to-br from-rose-500/10 to-pink-500/10',
     },
@@ -241,7 +241,7 @@ const ContactSection = () => {
       id: 'github',
       icon: Github,
       title: 'GitHub',
-      value: 'github.com/ranjitkairi',
+      value: 'github.com/tsr-kairi',
       link: 'https://github.com/tsr-kairi',
       color: 'from-gray-500 to-gray-400',
       bgColor: 'bg-gradient-to-br from-gray-500/10 to-gray-400/10',
@@ -292,8 +292,8 @@ const ContactSection = () => {
           badge="Get In Touch"
           title={<span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Let's Work Together</span>}
           subtitle={<>I'm currently open to new opportunities as a{' '}
-            <span className="text-purple-300 font-medium">Sr. Frontend Developer</span>.
-            Let's discuss how I can contribute to your team's success.</>}
+            <span className="text-purple-300 font-medium">Senior Software Engineer — Full Stack & Frontend</span>.
+            Let's discuss how I can architect high-performance web apps and AI automation systems for your team.</>}
         />
 
         {/* Availability banner */}
