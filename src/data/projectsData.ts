@@ -28,47 +28,47 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: 'ClinicGo',
-    description: 'A modern clinic management SaaS platform with appointment scheduling, patient records, doctor management, billing, and analytics — built for healthcare providers.',
-    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'REST APIs'],
+    title: 'ClinicGo Platform',
+    description: 'Engineered full-stack SaaS healthcare management system featuring real-time appointment booking, patient records, doctor scheduling, and automated invoice billing.',
+    tech: ['Next.js', 'Node.js', 'MongoDB', 'React', 'TypeScript', 'Tailwind CSS'],
     image: clinicgo,
     link: 'https://www.clinicgo.io/',
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer',
     impact: [
       'Built appointment scheduling with interactive calendar UI',
-      'Developed patient records and doctor management modules',
-      'Integrated billing and invoice generation',
-      'Responsive design optimized for mobile & desktop'
+      'Developed patient records, doctor management, and clinical workflows',
+      'Integrated automated billing and invoice generation',
+      'Engineered responsive full-stack architecture optimized for mobile & desktop'
     ],
     featured: true
   },
   {
-    title: 'Standard Digitals',
-    description: 'A full-service digital marketing agency website showcasing SEO, social media, branding, and web development services with a modern, conversion-focused design.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    title: 'Standard Digitals Platform',
+    description: 'Scalable full-stack agency web applications and custom LMS/WordPress platforms with AI automation workflows, WhatsApp Business API, and conversion-focused design.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Node.js', 'WhatsApp API', 'Tailwind CSS'],
     image: standarddigitals,
     link: 'https://standarddigitals.com/',
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer',
     impact: [
-      'Built high-performance marketing website with Next.js',
-      'Implemented SEO best practices for organic growth',
-      'Created animated sections with smooth transitions',
-      'Optimized Core Web Vitals for better search ranking'
+      'Architected and shipped scalable full-stack web applications with Next.js and Node.js',
+      'Developed custom WordPress, Elementor, and LMS platforms across multiple client projects',
+      'Integrated AI automation workflows and WhatsApp Business API for lead generation',
+      'Optimized Core Web Vitals and frontend bundle payloads, cutting page load times by 35%'
     ],
     featured: true
   },
   {
-    title: 'NexG Technologies',
-    description: 'Corporate website for NexG Technologies — a software company offering SaaS products, custom development, and enterprise solutions. Clean, professional design with service showcases.',
-    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    title: 'NexG Enterprise Suite (HRMS, CRM & Payroll)',
+    description: 'Architected high-throughput operational dashboards managing employee lifecycle, payroll disbursements, and dynamic analytics with role-based access control.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'State Architectures'],
     image: nexg,
     link: 'https://nexg.tech/',
-    role: 'Senior Frontend Developer',
+    role: 'Sr. Frontend Engineer',
     impact: [
-      'Developed the company\'s main corporate website',
-      'Built product showcase and service pages',
-      'Implemented smooth animations and transitions',
-      'Optimized for performance and SEO'
+      'Architected enterprise SaaS dashboards for HRMS, CRM, Payroll, and Billing systems',
+      'Implemented dynamic data filters, advanced search, and real-time analytics',
+      'Integrated role-based access control (RBAC) and modular component design systems',
+      'Spearheaded code reviews, frontend performance benchmarking, and technical alignment'
     ],
     featured: true
   },
@@ -116,16 +116,16 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    title: 'Erestro',
-    description: 'A restaurant management and online ordering platform with menu management, table reservations, order tracking, and a POS-ready admin panel for restaurant owners.',
-    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'REST APIs'],
+    title: 'Erestro Platform',
+    description: 'Full-stack restaurant management and online ordering SaaS platform featuring menu orchestration, real-time table reservations, order tracking, and automated billing.',
+    tech: ['Next.js', 'Node.js', 'MongoDB', 'React', 'TypeScript', 'Tailwind CSS'],
     image: erestro,
     link: 'https://erestro.in/',
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer',
     impact: [
-      'Built online ordering system with real-time updates',
-      'Developed menu management and table reservation modules',
-      'Created admin panel for order and inventory management',
+      'Built online ordering system with real-time order tracking and updates',
+      'Developed menu management, dining slots, and table reservation modules',
+      'Created POS-ready admin panel for order, invoice, and inventory management',
       'Implemented responsive design for dine-in and takeaway flows'
     ]
   },

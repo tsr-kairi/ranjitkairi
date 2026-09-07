@@ -21,17 +21,17 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
   ];
 
   const stats = [
-    { value: 5, suffix: '+', label: 'Years Experience' },
+    { value: 6, suffix: '+', label: 'Years Experience' },
     { value: 15, suffix: '+', label: 'Production Apps' },
-    { value: 20, suffix: '+', label: 'Technologies' },
-    { value: 35, suffix: '%', label: 'Faster Load Times' }
+    { value: 35, suffix: '%', label: 'Faster Load Times' },
+    { value: 100, suffix: '%', label: 'Client Delivery' }
   ];
 
   const expertise = [
     { icon: Code, title: 'Full Stack & Frontend', description: 'React, Next.js & Node.js' },
     { icon: Cpu, title: 'AI & Automation', description: 'Workflows & WhatsApp API' },
     { icon: Layout, title: 'UI & Core Web Vitals', description: '35% faster loads & RSC' },
-    { icon: Users, title: 'Component Design Systems', description: 'Modular, scalable UI kits' }
+    { icon: Users, title: 'Enterprise & LMS Platforms', description: 'Modular SaaS dashboards' }
   ];
 
   return (
@@ -84,10 +84,10 @@ const HeroSection = ({ isLoaded }: HeroSectionProps) => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-              Software Engineer with 5+ years of hands-on experience architecting high-performance,
+              Software Engineer with 6+ years of hands-on experience architecting high-performance,
               scalable web applications and AI automation systems. Proficient in React.js, Next.js,
               TypeScript, Node.js, and modern cloud architectures. Passionate about engineering pixel-perfect
-              UIs, boosting Core Web Vitals, and driving business growth.
+              UIs, boosting Core Web Vitals, and driving business growth through robust digital solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

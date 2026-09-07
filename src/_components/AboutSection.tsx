@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles, Bot, Quote } from 'lucide-react';
+import { Code, Trophy, Zap, Briefcase, Code2, Cpu, LayoutDashboard, Sparkles, Bot, Quote, GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 import AnimatedText from './AnimatedText';
 import SectionHeading from './SectionHeading';
 import SectionAmbience from './SectionAmbience';
@@ -58,12 +58,12 @@ const AboutSection = () => {
   const stats = [
     { icon: Code, value: 15, suffix: '+', decimals: 0, label: 'Production Apps Built' },
     { icon: Trophy, value: 30, suffix: '+', decimals: 0, label: 'Projects Completed' },
-    { icon: Zap, value: 5, suffix: '+', decimals: 0, label: 'Years Experience' },
+    { icon: Zap, value: 6, suffix: '+', decimals: 0, label: 'Years Experience' },
     { icon: Briefcase, value: 35, suffix: '%', decimals: 0, label: 'Bundle Load Reduction' }
   ];
 
   const techStack = [
-    { icon: Code2, name: 'React.js / Next.js' },
+    { icon: Code2, name: 'React.js / Next.js (App/RSC)' },
     { icon: Cpu, name: 'TypeScript / Node.js' },
     { icon: LayoutDashboard, name: 'Tailwind / Mantine / Material UI' },
     { icon: Sparkles, name: 'AI Automation / WhatsApp API' },
@@ -93,7 +93,7 @@ const AboutSection = () => {
               <Quote className="w-9 h-9 text-purple-400/50 mb-5" />
               <div className="space-y-6">
                 <AnimatedText
-                  text="I'm a Senior Software Engineer with 5+ years of hands-on experience architecting high-performance, scalable web applications and AI automation systems. Proficient in React.js, Next.js, TypeScript, Node.js, and modern cloud architectures."
+                  text="I'm a Senior Software Engineer with 6+ years of hands-on experience architecting high-performance, scalable web applications and AI automation systems. Proficient in React.js, Next.js, TypeScript, Node.js, and modern cloud architectures."
                   className="text-xl text-gray-300 leading-relaxed"
                   highlightWords={['Senior', 'Software', 'Engineer', 'Full', 'Stack']}
                   highlightClassName="text-white font-semibold"
@@ -218,6 +218,92 @@ const AboutSection = () => {
             
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 group-hover:duration-200 -z-10"></div>
           </motion.div>
+        </motion.div>
+
+        {/* Education, Certifications & Leadership Highlights */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {/* Education */}
+          <div className="p-6 rounded-2xl bg-gray-800/40 backdrop-blur-sm border border-white/5 hover:border-purple-500/30 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <GraduationCap className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-white">Education</h3>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-white font-semibold text-sm">Diploma in Elementary Education (D.EL.ED)</h4>
+                <p className="text-purple-300 text-xs mt-0.5">SCERT Assam | Sribhumi • 03/2019 – 04/2021</p>
+                <p className="text-gray-400 text-xs mt-1">Pedagogy, collaborative instruction & structured planning.</p>
+              </div>
+              <div className="pt-3 border-t border-gray-700/40">
+                <h4 className="text-white font-semibold text-sm">Higher Secondary (Arts)</h4>
+                <p className="text-purple-300 text-xs mt-0.5">Mahabir Public Higher Secondary School • 2014 – 2016</p>
+                <p className="text-gray-400 text-xs mt-1">High academic standing; squad leadership honors.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Certifications & Leadership */}
+          <div className="p-6 rounded-2xl bg-gray-800/40 backdrop-blur-sm border border-white/5 hover:border-pink-500/30 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                <Award className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-white">Certifications & Leadership</h3>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-white font-semibold text-sm">Web Programming (6-Month Cert)</h4>
+                <p className="text-pink-300 text-xs mt-0.5">APLL, Karimganj, Assam • 03/2019 – 08/2019</p>
+                <p className="text-gray-400 text-xs mt-1">Full-stack web fundamentals, JavaScript DOM, databases.</p>
+              </div>
+              <div className="pt-3 border-t border-gray-700/40">
+                <h4 className="text-white font-semibold text-sm">Member & Team Lead (Squad Guide)</h4>
+                <p className="text-pink-300 text-xs mt-0.5">Mahabir Public H.S. School • 03/2014 – 04/2016</p>
+                <p className="text-gray-400 text-xs mt-1">Led winning team in 2016 Squad Guide competition; awarded Great Dedicator Certificate.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Highlights & Interests */}
+          <div className="p-6 rounded-2xl bg-gray-800/40 backdrop-blur-sm border border-white/5 hover:border-blue-500/30 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2.5 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-white">Highlights & Interests</h3>
+            </div>
+            <div className="space-y-2.5">
+              <div className="flex items-start gap-2 text-xs text-gray-300">
+                <span className="text-green-400 font-bold">✔</span>
+                <span>Built 15+ production apps serving thousands of users.</span>
+              </div>
+              <div className="flex items-start gap-2 text-xs text-gray-300">
+                <span className="text-green-400 font-bold">✔</span>
+                <span>Automated WhatsApp API & AI lead workflows.</span>
+              </div>
+              <div className="flex items-start gap-2 text-xs text-gray-300">
+                <span className="text-green-400 font-bold">✔</span>
+                <span>Cut Next.js bundle loads by 35% via React Server Components.</span>
+              </div>
+              <div className="flex items-start gap-2 text-xs text-gray-300">
+                <span className="text-green-400 font-bold">✔</span>
+                <span>Advocate of clean architecture, CI/CD, and accessibility.</span>
+              </div>
+              <div className="pt-2.5 border-t border-gray-700/40 text-xs text-gray-400 flex flex-wrap gap-2">
+                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-purple-300">AI Experiments</span>
+                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-pink-300">UI/UX Design Trends</span>
+                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-blue-300">Cricket & Team Leadership</span>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

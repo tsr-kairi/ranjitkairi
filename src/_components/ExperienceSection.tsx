@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Trophy,
-  Users,
   Code,
   Calendar,
   Building,
@@ -21,17 +20,17 @@ const experienceData = [
     id: 1,
     role: 'Full Stack Developer',
     company: 'Standard Digitals',
-    years: '02/2024 — 09/2024',
-    duration: 'Feb 2024 – Sep 2024',
+    years: '02/2026 — 08/2026',
+    duration: 'Feb 2026 – Aug 2026',
     location: 'Remote (India)',
     type: 'Full-time',
     achievements: [
-      'Architected and shipped scalable full-stack web applications using React.js, Next.js, Node.js, and TypeScript for high-growth digital agency clients',
-      'Engineered custom AI automation workflows and lead-generation tools, boosting user engagement and client campaign performance',
-      'Integrated WhatsApp Business API and RESTful services for automated client notifications and live messaging',
-      'Optimized Core Web Vitals and frontend bundle payloads, cutting page load times and bundle sizes by 35%',
+      'Architected and shipped scalable full-stack web applications using React.js, Next.js, Node.js, and TypeScript for high-growth agency clients',
+      'Developed custom WordPress, Elementor, and LMS (Learning Management System) platforms across multiple client projects, optimizing for conversion and SEO',
+      'Integrated AI automation workflows, WhatsApp Business API, and RESTful services for automated lead generation, CRM sync, and messaging',
+      'Optimized Core Web Vitals and frontend bundle payloads, cutting initial page load times by 35%',
     ],
-    skills: ['React.js', 'Next.js', 'TypeScript', 'Node.js', 'AI Automation', 'WhatsApp API', 'Core Web Vitals'],
+    skills: ['React.js', 'Next.js', 'TypeScript', 'Node.js', 'WordPress & Elementor', 'LMS Platforms', 'AI Automation', 'WhatsApp API', 'Core Web Vitals'],
     color: 'from-purple-500 to-pink-500',
     bgColor: 'from-purple-500/10 to-pink-500/10',
     borderColor: 'border-purple-500/30',
@@ -42,17 +41,17 @@ const experienceData = [
     id: 2,
     role: 'Sr. Frontend Engineer',
     company: 'NexG Tech',
-    years: '07/2021 — 02/2024',
-    duration: 'Jul 2021 – Feb 2024 · 2 yrs 8 mos',
+    years: '07/2021 — 01/2026',
+    duration: 'Jul 2021 – Jan 2026 · 4 yrs 7 mos',
     location: 'New Delhi (Remote)',
     type: 'Full-time',
     achievements: [
-      'Delivered robust enterprise web platforms using React.js, Next.js, TypeScript, and modern state architectures',
-      'Built modular, reusable component design systems, improving team delivery velocity and codebase maintainability',
-      'Integrated AI-driven features, smart filters, and real-time dashboards to streamline enterprise user workflows',
-      'Spearheaded code reviews, Agile sprint estimations, and frontend performance benchmarking',
+      'Delivered robust enterprise web platforms using React.js, Next.js, TypeScript, and scalable state management architectures',
+      'Engineered enterprise SaaS dashboards for HRMS, CRM, Payroll, and Billing systems with dynamic data filters and role-based access control',
+      'Built modular, reusable component design systems, improving cross-team delivery velocity and codebase maintainability',
+      'Spearheaded code reviews, frontend performance benchmarking, and technical alignment across distributed engineering squads',
     ],
-    skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Design Systems', 'AI Workflows', 'REST APIs'],
+    skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HRMS / CRM / Payroll', 'Design Systems', 'State Architectures', 'Code Reviews'],
     color: 'from-blue-500 to-cyan-400',
     bgColor: 'from-blue-500/10 to-cyan-400/10',
     borderColor: 'border-blue-500/30',
@@ -68,11 +67,11 @@ const experienceData = [
     location: 'Hyderabad (Remote)',
     type: 'Full-time',
     achievements: [
-      'Developed responsive, mobile-first web interfaces with React.js, Next.js, and CSS utility frameworks',
-      'Ensured seamless cross-browser and cross-device functionality through automated testing and debugging',
-      'Collaborated closely with UI/UX designers and backend developers to ship feature releases ahead of deadlines',
+      'Developed responsive, mobile-first web interfaces with React.js, Next.js, and modern CSS utility frameworks',
+      'Ensured seamless cross-browser functionality through automated unit testing, debugging, and continuous profiling',
+      'Collaborated closely with UI/UX designers and backend teams to ship feature releases consistently ahead of schedule',
     ],
-    skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'CSS3', 'Agile'],
+    skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'CSS Utility Frameworks', 'Unit Testing & Debugging'],
     color: 'from-emerald-500 to-teal-400',
     bgColor: 'from-emerald-500/10 to-teal-400/10',
     borderColor: 'border-emerald-500/30',
@@ -89,9 +88,9 @@ const experienceData = [
     type: 'Contract',
     achievements: [
       'Digitized, audited, and verified thousands of citizen identity records for the National Register of Citizens (NRC)',
-      'Maintained strict data accuracy, confidentiality, and zero-defect records under tight statutory deadlines',
+      'Maintained strict data accuracy, confidentiality protocols, and zero-defect records under tight statutory deadlines',
     ],
-    skills: ['Data Verification', 'Auditing', 'Information Security', 'Quality Assurance'],
+    skills: ['Data Verification', 'Auditing', 'Confidentiality Protocols', 'Zero-Defect Records'],
     color: 'from-amber-500 to-orange-400',
     bgColor: 'from-amber-500/10 to-orange-400/10',
     borderColor: 'border-amber-500/30',
@@ -101,10 +100,10 @@ const experienceData = [
 ];
 
 const stats = [
-  { value: 5, suffix: '+', label: 'Years Experience', icon: Calendar, color: 'text-blue-400' },
+  { value: 6, suffix: '+', label: 'Years Experience', icon: Calendar, color: 'text-blue-400' },
   { value: 15, suffix: '+', label: 'Production Apps', icon: Trophy, color: 'text-purple-400' },
-  { value: 20, suffix: '+', label: 'Technologies', icon: Users, color: 'text-pink-400' },
   { value: 35, suffix: '%', label: 'Faster Load Times', icon: TrendingUp, color: 'text-green-400' },
+  { value: 100, suffix: '%', label: 'Delivery Track Record', icon: CheckCircle2, color: 'text-pink-400' },
 ];
 
 interface ExperienceCardProps {
@@ -354,7 +353,7 @@ const ModernExperienceSection = () => {
                         <div>
                           <h3 className="text-2xl font-bold text-white">Your Company Could Be Next</h3>
                           <p className="text-gray-400 mt-1">
-                            Open to Senior Frontend Developer opportunities — remote or Gurugram.
+                            Open to Senior Software Engineer — Full Stack & Frontend opportunities (Remote / Gurgaon & Delhi NCR).
                           </p>
                         </div>
                       </div>
